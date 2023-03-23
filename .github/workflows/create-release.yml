@@ -25,10 +25,10 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Create artifacts
-      run: dotnet publish .\WebApi\  -c Release-Dev -o out
+      run: dotnet publish ./WebApi -c Release-Dev -o out
     - name: Create Release
       uses: ncipollo/release-action@v1.12.0
       with: 
-        artifacts: "./WebApi/out"
+        artifacts: "./out"
 
       
